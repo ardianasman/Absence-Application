@@ -18,14 +18,17 @@ class PreviewActivity : AppCompatActivity() {
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)
         val ivPhoto = findViewById<ShapeableImageView>(R.id.ivPhoto)
         val etUsername = findViewById<EditText>(R.id.etUsername)
+        val etPassword = findViewById<EditText>(R.id.etPassword)
         val etName = findViewById<EditText>(R.id.etName)
         val etPhone = findViewById<EditText>(R.id.etPhone)
         val btnAdd = findViewById<Button>(R.id.btnAdd)
         val bundle = intent.extras
         etUsername.setText(bundle?.getString(InputKaryawanActivity.KEY_USERNAME))
+        etPassword.setText(bundle?.getString(InputKaryawanActivity.KEY_PASSWORD))
         etName.setText(bundle?.getString(InputKaryawanActivity.KEY_NAME))
         etPhone.setText(bundle?.getString(InputKaryawanActivity.KEY_PHONE))
         etUsername.isEnabled = false
+        etPassword.isEnabled = false
         etName.isEnabled = false
         etPhone.isEnabled = false
         btnAdd.setOnClickListener {

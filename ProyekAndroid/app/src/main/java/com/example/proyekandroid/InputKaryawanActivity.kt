@@ -19,11 +19,13 @@ class InputKaryawanActivity : AppCompatActivity() {
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)
         val ivPhoto = findViewById<ShapeableImageView>(R.id.ivPhoto)
         val etUsername = findViewById<EditText>(R.id.etUsername)
+        val etPassword = findViewById<EditText>(R.id.etPassword)
         val etName = findViewById<EditText>(R.id.etName)
         val etPhone = findViewById<EditText>(R.id.etPhone)
         val btnPreview = findViewById<Button>(R.id.btnPreview)
         btnPreview.setOnClickListener {
             val username = etUsername.text.toString()
+            val password = etPassword.text.toString()
             val name = etName.text.toString()
             val phone = etPhone.text.toString()
             var canContinue = true
@@ -31,6 +33,10 @@ class InputKaryawanActivity : AppCompatActivity() {
             if (username.isEmpty()) {
                 canContinue = false
                 errorMsg = "Please fill the username!\n"
+            }
+            if (password.isEmpty()) {
+                canContinue = false
+                errorMsg += "Please fill the password!\n"
             }
             if (name.isEmpty()) {
                 canContinue = false
@@ -43,6 +49,7 @@ class InputKaryawanActivity : AppCompatActivity() {
             if (canContinue) {
                 val b = Bundle()
                 b.putString(KEY_USERNAME, username)
+                b.putString(KEY_PASSWORD, password)
                 b.putString(KEY_NAME, name)
                 b.putString(KEY_PHONE, phone)
                 val intent = Intent(this@InputKaryawanActivity, PreviewActivity::class.java)
@@ -61,6 +68,7 @@ class InputKaryawanActivity : AppCompatActivity() {
 
     companion object {
         const val KEY_USERNAME = "username"
+        const val KEY_PASSWORD = "password"
         const val KEY_NAME = "name"
         const val KEY_PHONE = "phone"
     }
