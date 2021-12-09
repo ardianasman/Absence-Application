@@ -14,9 +14,6 @@
         android:theme="@style/Theme.ProyekAndroid">
         <activity
             android:name=".LaporanAbsenActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ScanActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".ScanActivity" />
         <activity android:name=".ListKaryawanActivity" />
         <activity android:name=".PreviewActivity" />
         <activity android:name=".InputKaryawanActivity" />
