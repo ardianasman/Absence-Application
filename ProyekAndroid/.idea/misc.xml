@@ -3,14 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/bottom_menu.xml" value="0.23489583333333333" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/email.xml" value="0.3958333333333333" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/gradient_anim.xml" value="0.39692307692307693" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/gradient_center.xml" value="0.39692307692307693" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/gradient_end.xml" value="0.39692307692307693" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/gradient_start.xml" value="0.39692307692307693" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/ic_back.xml" value="0.3958333333333333" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3958333333333333" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/password.xml" value="0.39692307692307693" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/round_button.xml" value="0.39692307692307693" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/font/proximanova.xml" value="0.2777777777777778" />
-        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_forgot_password.xml" value="0.75" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_home.xml" value="0.21875" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_input_karyawan.xml" value="0.3736413043478261" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_laporan_absen.xml" value="0.3736413043478261" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_list_karyawan.xml" value="0.3736413043478261" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_main.xml" value="0.75" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_notification.xml" value="0.21875" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_register.xml" value="0.3736413043478261" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/fragment_input_kary.xml" value="0.38697916666666665" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/fragment_scan.xml" value="0.38697916666666665" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/item_karyawan.xml" value="0.38697916666666665" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/menu/bottom_menu.xml" value="0.21875" />
         <entry key="..\:/Users/Andre/AndroidStudioProjects/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_input_karyawan.xml" value="0.1" />
         <entry key="..\:/Users/Andre/AndroidStudioProjects/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_laporan_absen.xml" value="0.15" />
         <entry key="..\:/Users/Andre/AndroidStudioProjects/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_list_karyawan.xml" value="0.1" />

@@ -13,7 +13,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyekAndroid">
         <activity
-            android:name=".LaporanAbsenActivity"
+            android:name=".Notification"
+            android:exported="true" />
+        <activity
+            android:name=".Home"
+            android:exported="true" />
+        <activity
+            android:name=".ForgotPassword"
+            android:exported="true" />
+        <activity
+            android:name=".Register"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +37,7 @@
         <activity android:name=".ListKaryawanActivity" />
         <activity android:name=".PreviewActivity" />
         <activity android:name=".InputKaryawanActivity" />
+        <activity android:name=".LaporanAbsenActivity" />
     </application>
 
 </manifest>

@@ -13,4 +13,8 @@
     <color name="blue_300">#00B4D8</color>
     <color name="light_blue">#90E0EF</color>
     <color name="lighter_blue">#CAF0F8</color>
+
+    <color name="GradientStart">#03045e</color>
+    <color name="GradientCenter">#00b4d8</color>
+    <color name="GradientEnd">#caf0f8</color>
 </resources>
