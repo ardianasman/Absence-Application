@@ -25,7 +25,7 @@
             android:name=".Register"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ListKaryawanActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,9 +34,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".ScanActivity" />
-        <activity android:name=".ListKaryawanActivity" />
-        <activity android:name=".PreviewActivity" />
         <activity android:name=".InputKaryawanActivity" />
+        <activity android:name=".PreviewActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".LaporanAbsenActivity" />
     </application>
 

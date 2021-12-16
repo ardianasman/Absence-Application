@@ -20,7 +20,7 @@ class ListKaryawanAdapter(private val mItems: ArrayList<Karyawan>) : RecyclerVie
 
     override fun onBindViewHolder(holder: ListKaryawanAdapter.ViewHolder, position: Int) {
         holder.tvNama.text = mItems[position].name
-        holder.tvNoHp.text = mItems[position].phone
+        holder.tvNoHp.text = mItems[position].telp
     }
 
     override fun getItemCount(): Int {
