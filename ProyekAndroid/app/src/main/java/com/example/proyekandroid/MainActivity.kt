@@ -50,10 +50,6 @@ class MainActivity : AppCompatActivity() {
                                 Toast.makeText(this, "Wrong login", Toast.LENGTH_LONG).show()
                             }
                         }
-                        else {
-                            btnLogin.startAnimation(btnShake)
-                            Toast.makeText(this, "Wrong login", Toast.LENGTH_LONG).show()
-                        }
                     }
                 }
         }
