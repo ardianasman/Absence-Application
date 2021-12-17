@@ -12,10 +12,18 @@ class Notification : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notification)
 
-//        navbar2.add(MeowBottomNavigation.Model(1, R.drawable.home))
-//        navbar2.add(MeowBottomNavigation.Model(2, R.drawable.notification))
-//        navbar2.add(MeowBottomNavigation.Model(3, R.drawable.account))
-//        navbar2.show(2, true)
+
+        navbarnotifications.selectedItemId = R.id.notificationnav
+        navbarnotifications.setOnItemSelectedListener { menu ->
+            when(menu.itemId){
+                R.id.homenav -> {
+                    val intacc = Intent(this@Notification, Home::class.java)
+                    startActivity(intacc)
+                }
+
+            }
+            true
+        }
     }
 
 }

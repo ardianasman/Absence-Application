@@ -25,24 +25,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-
-<!--    <FrameLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="65dp"-->
-<!--        android:id="@+id/framelayout2"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent">-->
-
-<!--        <com.etebarian.meowbottomnavigation.MeowBottomNavigation-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:id="@+id/navbar2"-->
-<!--            app:mbn_circleColor="@color/white"-->
-<!--            app:mbn_selectedIconColor="#3c415e"-->
-<!--            app:mbn_countTextColor="@color/white"-->
-<!--            app:mbn_countBackgroundColor="#ff6f00"-->
-<!--            app:mbn_defaultIconColor="@color/white"-->
-<!--            app:mbn_backgroundBottomColor="#3c415e"/>-->
-
-<!--    </FrameLayout>-->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navbarnotifications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/menu_list"
+        app:itemRippleColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

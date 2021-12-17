@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyekAndroid">
         <activity
+            android:name=".Account"
+            android:exported="true" />
+        <activity
             android:name=".Notification"
             android:exported="true" />
         <activity
