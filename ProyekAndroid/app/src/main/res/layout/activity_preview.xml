@@ -12,7 +12,6 @@
         android:layout_height="104dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="24dp"
-        app:shapeAppearanceOverlay="@style/rounded_image_view"
         tools:srcCompat="@tools:sample/avatars" />
 
     <EditText
@@ -56,5 +55,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add" />
+
+    <Button
+        android:id="@+id/btnList"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="List Karyawan" />
 
 </LinearLayout>
