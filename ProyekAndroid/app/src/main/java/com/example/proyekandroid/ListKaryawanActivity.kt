@@ -1,5 +1,6 @@
 package com.example.proyekandroid
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
@@ -19,9 +20,25 @@ class ListKaryawanActivity : AppCompatActivity() {
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)
         val db: FirebaseFirestore = FirebaseFirestore.getInstance()
         adapter = ListKaryawanAdapter(listItem)
+        adapter.setOnItemClickListener(object: ListKaryawanAdapter.OnItemClickListener {
+            override fun showDetail(position: Int, dataAdapter: ListKaryawanAdapter) {
+                val k = listItem[position]
+                val b = Bundle()
+                b.putString(InputKaryawanActivity.KEY_USERNAME, k.email)
+                b.putString(InputKaryawanActivity.KEY_PASSWORD, k.password)
+                b.putString(InputKaryawanActivity.KEY_NAME, k.name)
+                b.putString(InputKaryawanActivity.KEY_PHONE, k.telp)
+                b.putInt(InputKaryawanActivity.KEY_MODE, 0)
+                val intent = Intent(this@ListKaryawanActivity, PreviewActivity::class.java)
+                intent.putExtras(b)
+                startActivity(intent)
+            }
+
+        })
         val rv = findViewById<RecyclerView>(R.id.rv)
         rv.adapter = adapter
         rv.layoutManager = LinearLayoutManager(this)
+
         readData(db)
     }
 
@@ -37,8 +54,17 @@ class ListKaryawanActivity : AppCompatActivity() {
             .addOnSuccessListener { result ->
                 listItem.clear()
                 for (doc in result) {
-                    val n = Karyawan(doc.data.get("email").toString(), doc.data.get("name").toString(), doc.data.get("password").toString(), doc.data.get("telp").toString())
-                    listItem.add(n)
+                    if (doc.data.get("role").toString() == "k") {
+                        val n = Karyawan(
+                            doc.data.get("email").toString(),
+                            doc.data.get("name").toString(),
+                            doc.data.get("password").toString(),
+                            doc.data.get("pic").toString(),
+                            doc.data.get("role").toString(),
+                            doc.data.get("telp").toString()
+                        )
+                        listItem.add(n)
+                    }
                 }
                 adapter.notifyDataSetChanged()
             }

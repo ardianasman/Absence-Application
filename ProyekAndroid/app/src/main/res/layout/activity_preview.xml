@@ -12,7 +12,6 @@
         android:layout_height="104dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="24dp"
-        app:shapeAppearanceOverlay="@style/rounded_image_view"
         tools:srcCompat="@tools:sample/avatars" />
 
     <EditText

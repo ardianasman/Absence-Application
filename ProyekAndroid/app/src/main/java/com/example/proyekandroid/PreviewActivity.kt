@@ -1,15 +1,19 @@
 package com.example.proyekandroid
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.bumptech.glide.Glide
 import com.google.android.material.imageview.ShapeableImageView
 import com.google.firebase.firestore.FirebaseFirestore
+import java.io.File
 
 class PreviewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,16 +35,27 @@ class PreviewActivity : AppCompatActivity() {
         etPassword.setText(bundle?.getString(InputKaryawanActivity.KEY_PASSWORD))
         etName.setText(bundle?.getString(InputKaryawanActivity.KEY_NAME))
         etPhone.setText(bundle?.getString(InputKaryawanActivity.KEY_PHONE))
+        var pic = ""
+        if (bundle != null) {
+            pic = bundle.getString(InputKaryawanActivity.KEY_PIC).toString()
+        }
+        Glide.with(this)
+            .load(Uri.fromFile(File(pic)))
+            .circleCrop()
+            .into(ivPhoto)
         etUsername.isEnabled = false
         etPassword.isEnabled = false
         etName.isEnabled = false
         etPhone.isEnabled = false
+        if (bundle?.getInt(InputKaryawanActivity.KEY_MODE) == 0) {
+            btnAdd.visibility = View.GONE
+        }
         btnAdd.setOnClickListener {
             val username = etUsername.text.toString()
             val pwd = etPassword.text.toString()
             val name = etName.text.toString()
             val phone = etPhone.text.toString()
-            val k = Karyawan(username, name, pwd, phone)
+            val k = Karyawan(username, name, pwd, pic, "k", phone)
             db.collection("user").document(username)
                 .set(k)
                 .addOnSuccessListener {
