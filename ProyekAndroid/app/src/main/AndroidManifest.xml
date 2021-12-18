@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -40,7 +42,7 @@
             android:name=".Register"
             android:exported="true" />
         <activity
-            android:name=".InputKaryawanActivity"
+            android:name=".ScanActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,7 +50,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ScanActivity" />
+        <activity android:name=".InputKaryawanActivity" />
         <activity android:name=".ListKaryawanActivity" />
         <activity android:name=".PreviewActivity" />
         <activity android:name=".MainActivity" />

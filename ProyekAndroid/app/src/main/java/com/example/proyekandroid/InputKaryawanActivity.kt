@@ -49,33 +49,39 @@ class InputKaryawanActivity : AppCompatActivity() {
         val etName = findViewById<EditText>(R.id.etName)
         val etPhone = findViewById<EditText>(R.id.etPhone)
         val btnPreview = findViewById<Button>(R.id.btnPreview)
-        handlePermissions(
-            arrayOf(
-                Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                Manifest.permission.CAMERA
-            )
-        )
         ivPhoto.setOnClickListener {
-            Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
-                // Ensure that there's a camera activity to handle the intent
-                takePictureIntent.resolveActivity(packageManager)?.also {
-                    // Create the File where the photo should go
-                    val photoFile: File? = try {
-                        createImageFile()
-                    } catch (ex: IOException) {
-                        null
-                    }
-                    // Continue only if the File was successfully created
-                    photoFile?.also {
-                        val photoURI: Uri = FileProvider.getUriForFile(
-                            this,
-                            "com.example.proyekandroid",
-                            it
-                        )
-                        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
-                        startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
+            if (checkPermissions(arrayOf(
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.CAMERA
+                ))) {
+                Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
+                    // Ensure that there's a camera activity to handle the intent
+                    takePictureIntent.resolveActivity(packageManager)?.also {
+                        // Create the File where the photo should go
+                        val photoFile: File? = try {
+                            createImageFile()
+                        } catch (ex: IOException) {
+                            null
+                        }
+                        // Continue only if the File was successfully created
+                        photoFile?.also {
+                            val photoURI: Uri = FileProvider.getUriForFile(
+                                this,
+                                "com.example.proyekandroid",
+                                it
+                            )
+                            takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
+                            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
+                        }
                     }
                 }
+            } else {
+                handlePermissions(
+                    arrayOf(
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.CAMERA
+                    )
+                )
             }
         }
         btnPreview.setOnClickListener {
@@ -157,6 +163,21 @@ class InputKaryawanActivity : AppCompatActivity() {
             permissions = notGrantedPerms.toArray(arrayOfNulls(0))
             if (permissions != null && permissions.isNotEmpty()) requestPermissions(permissions, REQ_CODE)
         }
+    }
+
+    private fun checkPermissions(permissions: Array<String?>): Boolean {
+        var permissions: Array<String?>? = permissions
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            val notGrantedPerms: ArrayList<String?> = ArrayList()
+            for (p in permissions!!) {
+                if (checkSelfPermission(p!!) != PackageManager.PERMISSION_GRANTED) notGrantedPerms.add(
+                    p
+                )
+            }
+            permissions = notGrantedPerms.toArray(arrayOfNulls(0))
+            if (permissions != null && permissions.isNotEmpty()) return false
+        }
+        return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
