@@ -5,7 +5,8 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -17,6 +18,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyekAndroid">
+        <activity
+            android:name=".AddCuti"
+            android:exported="true" />
+        <activity
+            android:name=".Cuti"
+            android:exported="true" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.proyekandroid"
@@ -24,8 +32,9 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+                android:resource="@xml/file_paths" />
         </provider>
+
         <activity
             android:name=".Account"
             android:exported="true" />
@@ -42,7 +51,7 @@
             android:name=".Register"
             android:exported="true" />
         <activity
-            android:name=".ScanActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,8 +61,8 @@
         </activity>
         <activity android:name=".InputKaryawanActivity" />
         <activity android:name=".ListKaryawanActivity" />
-        <activity android:name=".PreviewActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".PreviewActivity" /> <!-- <activity android:name=".MainActivity" /> -->
+        <activity android:name=".ScanActivity" />
         <activity android:name=".LaporanAbsenActivity" />
     </application>
 

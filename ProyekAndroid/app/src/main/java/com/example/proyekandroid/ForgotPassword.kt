@@ -32,11 +32,9 @@ class ForgotPassword : AppCompatActivity() {
             else{
                 if(tiPasswordForgot.text.toString() == tiConfirmPasswordForgot.text.toString()){
                     db.collection("user").document(tiEmailForgot.text.toString())
-                        .set(User(tiEmailForgot.text.toString(), tiPasswordForgot.text.toString()))
-                        .addOnSuccessListener {
-                            val intforgot= Intent(this@ForgotPassword, MainActivity::class.java)
-                            startActivity(intforgot)
-                        }
+                        .update("password", tiPasswordForgot.text.toString())
+                    val intforgot= Intent(this@ForgotPassword, MainActivity::class.java)
+                    startActivity(intforgot)
                 }
                 else{
                     Toast.makeText(this, "Different confirm password", Toast.LENGTH_LONG).show()

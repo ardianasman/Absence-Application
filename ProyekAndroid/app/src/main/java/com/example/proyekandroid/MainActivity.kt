@@ -1,18 +1,29 @@
 package com.example.proyekandroid
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.se.omapi.Session
+import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
 
 lateinit var db : FirebaseFirestore
 
 class MainActivity : AppCompatActivity() {
+    companion object{
+        var data : String =""
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -22,9 +33,12 @@ class MainActivity : AppCompatActivity() {
         animDrawable.setExitFadeDuration(5000)
         animDrawable.start()
 
+
         db = FirebaseFirestore.getInstance()
 
+
         val btnShake : Animation = AnimationUtils.loadAnimation(this,R.anim.buttonshake)
+
 
 
         btntoRegister.setOnClickListener{
@@ -42,8 +56,14 @@ class MainActivity : AppCompatActivity() {
                     for(docs in result){
                         if(docs.data.get("email") == tiEmailLogin.text.toString()){
                             if(docs.data.get("password") == tiPasswordLogin.text.toString()){
-                                val intlogin = Intent(this@MainActivity, Home::class.java)
-                                startActivity(intlogin)
+                                if(docs.data.get("role") == "Karyawan"){
+                                    val intlogin = Intent(this@MainActivity, Home::class.java)
+                                    startActivity(intlogin)
+                                }
+                                else if (docs.data.get("role") == "Pengurus"){
+                                    // KE HOME PENGURUS
+                                }
+                                data = tiEmailLogin.text.toString()
                             }
                             else {
                                 btnLogin.startAnimation(btnShake)

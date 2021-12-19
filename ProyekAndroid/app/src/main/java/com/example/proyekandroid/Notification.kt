@@ -20,6 +20,10 @@ class Notification : AppCompatActivity() {
                     val intacc = Intent(this@Notification, Home::class.java)
                     startActivity(intacc)
                 }
+                R.id.accountnav -> {
+                    val intacc = Intent(this@Notification, Account::class.java)
+                    startActivity(intacc)
+                }
 
             }
             true
