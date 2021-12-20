@@ -19,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyekAndroid">
         <activity
+            android:name=".SeeGajiKaryawan"
+            android:exported="false" />
+        <activity
             android:name=".AddCuti"
             android:exported="true" />
         <activity

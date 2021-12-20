@@ -14,6 +14,8 @@ class SetGaji : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_set_gaji)
+        supportActionBar?.setHomeButtonEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)
         db= FirebaseFirestore.getInstance()
         val spUser:Spinner=findViewById(R.id.spUser)
         val etPokok:EditText=findViewById(R.id.etPokok)
