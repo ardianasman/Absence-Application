@@ -14,7 +14,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.gson.Gson
+//import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
 
 lateinit var db : FirebaseFirestore
@@ -61,7 +61,8 @@ class MainActivity : AppCompatActivity() {
                                     startActivity(intlogin)
                                 }
                                 else if (docs.data.get("role") == "Pengurus"){
-                                    // KE HOME PENGURUS
+                                    val intlogin = Intent(this@MainActivity, HomePengurusActivity::class.java)
+                                    startActivity(intlogin)
                                 }
                                 data = tiEmailLogin.text.toString()
                             }

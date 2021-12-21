@@ -55,7 +55,7 @@ class PreviewActivity : AppCompatActivity() {
             val pwd = etPassword.text.toString()
             val name = etName.text.toString()
             val phone = etPhone.text.toString()
-            val k = Karyawan(username, name, pwd, pic, "k", phone)
+            val k = Karyawan(username, name, pwd, pic, "Karyawan", phone)
             db.collection("user").document(username)
                 .set(k)
                 .addOnSuccessListener {

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homenav"
+        android:icon="@drawable/home"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/inputnav"
+        android:icon="@drawable/ic_input"
+        android:title="Input"/>
+
+    <item
+        android:id="@+id/calendarnav"
+        android:icon="@drawable/ic_calendar"
+        android:title="Calendar"/>
+
+    <item
+        android:id="@+id/accountnav"
+        android:icon="@drawable/account"
+        android:title="Account"/>
+</menu>

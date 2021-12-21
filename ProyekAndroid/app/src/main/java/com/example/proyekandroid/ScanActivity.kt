@@ -17,17 +17,14 @@ import com.budiyev.android.codescanner.ErrorCallback
 import com.budiyev.android.codescanner.ScanMode
 import java.text.SimpleDateFormat
 import java.util.*
-import android.content.DialogInterface
 
 import android.content.Intent
 import android.content.SharedPreferences
-import android.location.Address
 import android.location.Geocoder
 import android.location.Location
 import android.provider.Settings
 import androidx.appcompat.app.AlertDialog
 import android.location.LocationManager
-import android.util.Log
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.firebase.firestore.FirebaseFirestore
@@ -118,10 +115,12 @@ class ScanActivity : AppCompatActivity() {
                     db.collection("absensi").document(tgl + "_" + waktu)
                         .set(absensi)
                         .addOnSuccessListener {
-                            Toast.makeText(this@ScanActivity, "Absensi berhasil!", Toast.LENGTH_SHORT).show()
+                            setResult(RESULT_OK)
+                            finish()
                         }
                         .addOnFailureListener {
-                            Toast.makeText(this@ScanActivity, it.message.toString(), Toast.LENGTH_SHORT).show()
+                            setResult(Home.SCAN_RESULT_FAILED)
+                            finish()
                         }
                 }
 

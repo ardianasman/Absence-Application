@@ -1,12 +1,9 @@
 package com.example.proyekandroid
 
 import android.content.Intent
-import android.graphics.ColorSpace
-import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -31,7 +28,7 @@ class Home : AppCompatActivity() {
 
         ivScan.setOnClickListener {
             val intscan = Intent(this@Home, ScanActivity::class.java)
-            startActivity(intscan)
+            startActivityForResult(intscan, SCAN_REQUEST_CODE)
         }
         ivIzin.setOnClickListener {
             val intscan = Intent(this@Home, ScanActivity::class.java)
@@ -50,6 +47,22 @@ class Home : AppCompatActivity() {
             val intscan = Intent(this@Home, ScanActivity::class.java)
             startActivity(intscan)
         }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == SCAN_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                Toast.makeText(this, "Scan succeeded!", Toast.LENGTH_LONG).show()
+            } else if (resultCode == SCAN_RESULT_FAILED) {
+                Toast.makeText(this, "Something went wrong!", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+
+    companion object{
+        const val SCAN_REQUEST_CODE = 1199
+        const val SCAN_RESULT_FAILED = -3
     }
 
 }
