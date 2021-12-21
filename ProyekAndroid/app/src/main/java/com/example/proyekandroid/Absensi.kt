@@ -1,7 +1,7 @@
 package com.example.proyekandroid
 
 class Absensi (
-    val is_check_in: Boolean,
+    val check_in: Boolean,
     val location: String,
     val tanggal: String,
     val username: String,

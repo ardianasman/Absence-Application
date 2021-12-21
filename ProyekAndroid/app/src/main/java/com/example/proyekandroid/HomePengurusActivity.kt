@@ -11,6 +11,16 @@ class HomePengurusActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_pengurus)
 
+        navbarPengurus.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.inputnav -> {
+                    val intnot = Intent(this@HomePengurusActivity, InputKaryawanActivity::class.java)
+                    startActivity(intnot)
+                }
+            }
+            true
+        }
+
         ivKaryawan.setOnClickListener {
             val intent = Intent(this@HomePengurusActivity, ListKaryawanActivity::class.java)
             startActivity(intent)

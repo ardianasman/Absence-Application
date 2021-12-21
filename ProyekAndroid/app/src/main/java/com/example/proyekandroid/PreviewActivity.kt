@@ -55,15 +55,16 @@ class PreviewActivity : AppCompatActivity() {
             val pwd = etPassword.text.toString()
             val name = etName.text.toString()
             val phone = etPhone.text.toString()
-            val k = Karyawan(username, name, pwd, pic, "Karyawan", phone)
+            val k = Karyawan(false,username, name, pwd, pic, "Karyawan", phone)
             db.collection("user").document(username)
                 .set(k)
-                .addOnSuccessListener {
-                    Toast.makeText(this@PreviewActivity, "Data berhasil ditambahkan!", Toast.LENGTH_SHORT).show()
-                }
-                .addOnFailureListener {
-                    Toast.makeText(this@PreviewActivity, it.message.toString(), Toast.LENGTH_SHORT).show()
-                }
+//                .addOnSuccessListener {
+//
+//                }
+//                .addOnFailureListener {
+//                    Toast.makeText(this@PreviewActivity, it.message.toString(), Toast.LENGTH_SHORT).show()
+//                }
+            Toast.makeText(this@PreviewActivity, "Data berhasil ditambahkan!", Toast.LENGTH_SHORT).show()
         }
         btnList.setOnClickListener {
             val intent = Intent(this@PreviewActivity, ListKaryawanActivity::class.java)
