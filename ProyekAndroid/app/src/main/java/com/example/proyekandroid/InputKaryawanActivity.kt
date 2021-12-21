@@ -49,6 +49,7 @@ class InputKaryawanActivity : AppCompatActivity() {
         val etName = findViewById<EditText>(R.id.etName)
         val etPhone = findViewById<EditText>(R.id.etPhone)
         val btnPreview = findViewById<Button>(R.id.btnPreview)
+        currentPhotoPath = ""
         ivPhoto.setOnClickListener {
             if (checkPermissions(arrayOf(
                     Manifest.permission.WRITE_EXTERNAL_STORAGE,
@@ -107,10 +108,10 @@ class InputKaryawanActivity : AppCompatActivity() {
                 canContinue = false
                 errorMsg += "Please fill your phone number!\n"
             }
-            if (currentPhotoPath.isEmpty()) {
-                canContinue = false
-                errorMsg += "Please fill profile picture!\n"
-            }
+//            if (currentPhotoPath.isEmpty()) {
+//                canContinue = false
+//                errorMsg += "Please fill profile picture!\n"
+//            }
             if (canContinue) {
                 val b = Bundle()
                 b.putString(KEY_USERNAME, username)

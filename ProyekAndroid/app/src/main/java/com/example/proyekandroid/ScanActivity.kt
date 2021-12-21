@@ -17,17 +17,14 @@ import com.budiyev.android.codescanner.ErrorCallback
 import com.budiyev.android.codescanner.ScanMode
 import java.text.SimpleDateFormat
 import java.util.*
-import android.content.DialogInterface
 
 import android.content.Intent
 import android.content.SharedPreferences
-import android.location.Address
 import android.location.Geocoder
 import android.location.Location
 import android.provider.Settings
 import androidx.appcompat.app.AlertDialog
 import android.location.LocationManager
-import android.util.Log
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.firebase.firestore.FirebaseFirestore
@@ -41,11 +38,9 @@ class ScanActivity : AppCompatActivity() {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var myLocation:String
 
-    private lateinit var sharedPreference: SharedPreferences
-    private lateinit var editor: SharedPreferences.Editor
-    private val IS_CHECK_IN = "ischeckin"
-
-    private lateinit var db : FirebaseFirestore
+//    private lateinit var sharedPreference: SharedPreferences
+//    private lateinit var editor: SharedPreferences.Editor
+//    private val IS_CHECK_IN = "ischeckin"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,10 +49,9 @@ class ScanActivity : AppCompatActivity() {
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)
-        db = FirebaseFirestore.getInstance()
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-        sharedPreference = getSharedPreferences("com.kawoo.nitnit.recyclerview", Context.MODE_PRIVATE)
-        editor = sharedPreference.edit()
+//        sharedPreference = getSharedPreferences("com.kawoo.nitnit.recyclerview", Context.MODE_PRIVATE)
+//        editor = sharedPreference.edit()
         val isGranted =
             ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED &&
                     ContextCompat.checkSelfPermission(this,  Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
@@ -106,23 +100,26 @@ class ScanActivity : AppCompatActivity() {
                 } else {
                     val tgl: String = SimpleDateFormat("dd-MM-yyyy").format(Date())
                     val waktu: String = SimpleDateFormat("HH:mm:ss").format(Date())
-                    var isCheckIn = true
-                    if (sharedPreference.contains(IS_CHECK_IN)) {
-                        isCheckIn = !sharedPreference.getBoolean(IS_CHECK_IN, true)
-                        editor.putBoolean(IS_CHECK_IN, isCheckIn)
+                    if (tgl == it.text) {
+//                        var isCheckIn = true
+//                        if (sharedPreference.contains(IS_CHECK_IN)) {
+//                            isCheckIn = !sharedPreference.getBoolean(IS_CHECK_IN, true)
+//                        }
+//                        editor.putBoolean(IS_CHECK_IN, isCheckIn)
+//                        editor.commit()
+
+                        val bundle = Bundle()
+                        bundle.putString(KEY_TGL, tgl)
+                        bundle.putString(KEY_WAKTU, waktu)
+                        bundle.putString(KEY_LOCATION, myLocation)
+                        intent.putExtras(bundle)
+                        setResult(RESULT_OK, intent)
+                        finish()
                     } else {
-                        editor.putBoolean(IS_CHECK_IN, true)
+                        Toast.makeText(this@ScanActivity, "Invalid QR code", Toast.LENGTH_LONG).show()
+                        codeScanner.startPreview()
                     }
 
-                    val absensi = Absensi(isCheckIn, myLocation, tgl, "agung@gmail.com", waktu)
-                    db.collection("absensi").document(tgl + "_" + waktu)
-                        .set(absensi)
-                        .addOnSuccessListener {
-                            Toast.makeText(this@ScanActivity, "Absensi berhasil!", Toast.LENGTH_SHORT).show()
-                        }
-                        .addOnFailureListener {
-                            Toast.makeText(this@ScanActivity, it.message.toString(), Toast.LENGTH_SHORT).show()
-                        }
                 }
 
             }
@@ -132,10 +129,6 @@ class ScanActivity : AppCompatActivity() {
                 Toast.makeText(this, "Camera initialization error: ${it.message}",
                     Toast.LENGTH_LONG).show()
             }
-        }
-
-        scannerView.setOnClickListener {
-            codeScanner.startPreview()
         }
     }
 
@@ -216,5 +209,11 @@ class ScanActivity : AppCompatActivity() {
             android.R.id.home -> onBackPressed()
         }
         return true
+    }
+
+    companion object {
+        const val KEY_TGL = "tgl"
+        const val KEY_WAKTU = "waktu"
+        const val KEY_LOCATION = "location"
     }
 }

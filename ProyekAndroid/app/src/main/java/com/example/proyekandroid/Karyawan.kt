@@ -1,6 +1,7 @@
 package com.example.proyekandroid
 
 class Karyawan(
+    val check_in: Boolean,
     val email: String,
     val name: String,
     val password: String,

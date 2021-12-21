@@ -67,6 +67,8 @@
         <activity android:name=".PreviewActivity" /> <!-- <activity android:name=".MainActivity" /> -->
         <activity android:name=".ScanActivity" />
         <activity android:name=".LaporanAbsenActivity" />
+        <activity android:name=".HomePengurusActivity" />
+        <activity android:name=".QRCodeActivity" />
     </application>
 
 </manifest>

@@ -54,8 +54,9 @@ class ListKaryawanActivity : AppCompatActivity() {
             .addOnSuccessListener { result ->
                 listItem.clear()
                 for (doc in result) {
-                    if (doc.data.get("role").toString() == "k") {
+                    if (doc.data.get("role").toString() == "Karyawan") {
                         val n = Karyawan(
+                            doc.get("check_in").toString().toBoolean(),
                             doc.data.get("email").toString(),
                             doc.data.get("name").toString(),
                             doc.data.get("password").toString(),
