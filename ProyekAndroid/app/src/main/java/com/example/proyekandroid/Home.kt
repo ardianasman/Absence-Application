@@ -34,7 +34,7 @@ class Home : AppCompatActivity() {
             startActivityForResult(intscan, SCAN_REQUEST_CODE)
         }
         ivIzin.setOnClickListener {
-            val intscan = Intent(this@Home, ScanActivity::class.java)
+            val intscan = Intent(this@Home, Izin::class.java)
             startActivity(intscan)
         }
         ivCuti.setOnClickListener {

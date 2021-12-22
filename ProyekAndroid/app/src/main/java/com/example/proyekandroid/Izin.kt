@@ -1,44 +1,42 @@
 package com.example.proyekandroid
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.proyekandroid.MainActivity.Companion.data
-import com.google.common.reflect.TypeToken
-import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_cuti.*
+import kotlinx.android.synthetic.main.activity_izin.*
 
-private var arCuti = arrayListOf<ClassCuti>()
 
+private var arIzin = arrayListOf<ClassCuti>()
 
-class Cuti : AppCompatActivity() {
+class Izin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cuti)
+        setContentView(R.layout.activity_izin)
 
-        btnAddCuti.setOnClickListener {
-            val intaddcuti = Intent(this@Cuti, AddCuti::class.java)
-            startActivity(intaddcuti)
+        btnAddIzin.setOnClickListener {
+            val intizin = Intent(this@Izin, AddIzin::class.java)
+            startActivity(intizin)
         }
 
         getCuti()
     }
 
     private fun getCuti(){
-        db.collection("cuti")
+        db.collection("izin")
             .get()
             .addOnSuccessListener {result ->
-                arCuti.clear()
+                arIzin.clear()
                 for(docs in result){
-                    if(docs.data.get("username") == data){var data = ClassCuti(
+                    if(docs.data.get("username") == MainActivity.data){
+                        var data = ClassCuti(
                         docs.data.get("durasi").toString() + " Days",
                         docs.data.get("keterangan").toString(),
                         docs.data.get("start").toString(),
                         "","",docs.data.get("status").toString()
                     )
-                        arCuti.add(data)
+                        arIzin.add(data)
                     }
                 }
                 TampilkanCuti()
@@ -49,12 +47,8 @@ class Cuti : AppCompatActivity() {
     }
 
     private fun TampilkanCuti(){
-        val adapterC = adapterutama(arCuti)
-        rvCuti.layoutManager = LinearLayoutManager(this)
-        rvCuti.adapter = adapterC
-    }
-
-    private fun CheckLeaveStatus(){
-
+        val adapterC = adapterutama(arIzin)
+        rvIzin.layoutManager = LinearLayoutManager(this)
+        rvIzin.adapter = adapterC
     }
 }

@@ -9,5 +9,6 @@ data class ClassCuti(
     var keterangan : String,
     var start : String,
     var end : String,
-    var username : String
+    var username : String,
+    var status : String
 ): Parcelable

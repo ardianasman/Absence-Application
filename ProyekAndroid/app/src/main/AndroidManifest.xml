@@ -19,6 +19,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyekAndroid">
         <activity
+            android:name=".AddIzin"
+            android:exported="true" />
+        <activity
+            android:name=".Izin"
+            android:exported="true" />
+        <activity
             android:name=".SeeGajiKaryawan"
             android:exported="false" />
         <activity
