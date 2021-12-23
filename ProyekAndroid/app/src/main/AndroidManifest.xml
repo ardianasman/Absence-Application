@@ -19,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyekAndroid">
         <activity
+            android:name=".SeeAbsensiKaryawan"
+            android:exported="false" />
+        <activity
             android:name=".AddIzin"
             android:exported="true" />
         <activity

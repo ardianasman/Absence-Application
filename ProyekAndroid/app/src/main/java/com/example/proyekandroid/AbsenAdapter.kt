@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class AbsenAdapter (private var listAbsen: ArrayList<Absen>) :RecyclerView.Adapter<AbsenAdapter.ViewHolder>(){
+class AbsenAdapter (private var listAbsen: ArrayList<Absensi>) :RecyclerView.Adapter<AbsenAdapter.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view=LayoutInflater.from(parent.context).inflate(R.layout.itemabsen,parent,false)
         return ViewHolder(view)
@@ -15,8 +15,8 @@ class AbsenAdapter (private var listAbsen: ArrayList<Absen>) :RecyclerView.Adapt
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.tvNum.text= position.toString()
         holder.tvTgl.text=listAbsen[position].tanggal
-        holder.tvIn.text=listAbsen[position].masuk
-        holder.tvOut.text=listAbsen[position].keluar
+        holder.tvIn.text=listAbsen[position].waktu
+        holder.tvLoc.text=listAbsen[position].location
     }
 
     override fun getItemCount(): Int {
@@ -25,7 +25,7 @@ class AbsenAdapter (private var listAbsen: ArrayList<Absen>) :RecyclerView.Adapt
     class ViewHolder(view:View):RecyclerView.ViewHolder(view){
         val tvNum=view.findViewById<TextView>(R.id.tvNum)
         val tvTgl=view.findViewById<TextView>(R.id.tvTgl)
-        val tvIn=view.findViewById<TextView>(R.id.tvIn)
-        val tvOut=view.findViewById<TextView>(R.id.tvOut)
+        val tvIn=view.findViewById<TextView>(R.id.tvTime)
+        val tvLoc=view.findViewById<TextView>(R.id.tvLoc)
     }
 }
