@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.imageview.ShapeableImageView
+        <ImageView
             android:id="@+id/ivPhoto"
             android:layout_width="104dp"
             android:layout_height="104dp"
@@ -83,62 +83,13 @@
             android:text="Preview" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navbarPengurus"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:orientation="horizontal"
-        android:background="@color/blue_500"
+        android:layout_height="wrap_content"
+        app:itemRippleColor="@color/white"
+        app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/tvHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textAlignment="center"
-            android:layout_gravity="center"
-            android:textSize="14sp"
-            android:textColor="@color/light_blue"
-            android:textStyle="bold"
-            android:text="Home" />
-
-        <TextView
-            android:id="@+id/tvInput"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textAlignment="center"
-            android:layout_gravity="center"
-            android:textSize="14sp"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:text="Input" />
-
-        <TextView
-            android:id="@+id/tvCalendar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textAlignment="center"
-            android:layout_gravity="center"
-            android:textSize="14sp"
-            android:textColor="@color/light_blue"
-            android:textStyle="bold"
-            android:text="Calendar" />
-
-        <TextView
-            android:id="@+id/tvAccount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textAlignment="center"
-            android:layout_gravity="center"
-            android:textSize="14sp"
-            android:textColor="@color/light_blue"
-            android:textStyle="bold"
-            android:text="Account" />
-    </LinearLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_pengurus" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,7 +9,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import com.bumptech.glide.Glide
 import com.google.android.material.imageview.ShapeableImageView
 import com.google.firebase.firestore.FirebaseFirestore
@@ -58,12 +57,6 @@ class PreviewActivity : AppCompatActivity() {
             val k = Karyawan(false,username, name, pwd, pic, "Karyawan", phone)
             db.collection("user").document(username)
                 .set(k)
-//                .addOnSuccessListener {
-//
-//                }
-//                .addOnFailureListener {
-//                    Toast.makeText(this@PreviewActivity, it.message.toString(), Toast.LENGTH_SHORT).show()
-//                }
             Toast.makeText(this@PreviewActivity, "Data berhasil ditambahkan!", Toast.LENGTH_SHORT).show()
         }
         btnList.setOnClickListener {

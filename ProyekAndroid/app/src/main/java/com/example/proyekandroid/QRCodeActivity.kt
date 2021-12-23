@@ -1,13 +1,11 @@
 package com.example.proyekandroid
 
-import android.R.attr
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.zxing.WriterException
 
-import android.R.attr.bitmap
 import android.graphics.Point
 import android.util.Log
 import android.view.Display
