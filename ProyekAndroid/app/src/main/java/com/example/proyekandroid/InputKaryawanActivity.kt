@@ -1,30 +1,24 @@
 package com.example.proyekandroid
 
 import android.Manifest
-import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import com.google.android.material.imageview.ShapeableImageView
 import android.os.Build
 import android.os.Environment
 import android.provider.MediaStore
-import android.util.Log
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.content.FileProvider
 import com.bumptech.glide.Glide
-import com.google.android.material.shape.ShapeAppearanceModel
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_home_pengurus.*
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
@@ -35,8 +29,13 @@ import kotlin.collections.ArrayList
 class InputKaryawanActivity : AppCompatActivity() {
     private val REQ_CODE = 705
     private val REQUEST_IMAGE_CAPTURE = 12
-    private lateinit var ivPhoto: ShapeableImageView
+    private lateinit var ivPhoto: ImageView
     private lateinit var currentPhotoPath: String
+    private val permissions:Array<String?> = arrayOf(
+        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        Manifest.permission.CAMERA,
+        Manifest.permission.READ_EXTERNAL_STORAGE
+    )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_input_karyawan)
@@ -49,40 +48,13 @@ class InputKaryawanActivity : AppCompatActivity() {
         val etName = findViewById<EditText>(R.id.etName)
         val etPhone = findViewById<EditText>(R.id.etPhone)
         val btnPreview = findViewById<Button>(R.id.btnPreview)
+        val navbarPengurus = findViewById<BottomNavigationView>(R.id.navbarPengurus)
         currentPhotoPath = ""
         ivPhoto.setOnClickListener {
-            if (checkPermissions(arrayOf(
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    Manifest.permission.CAMERA
-                ))) {
-                Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
-                    // Ensure that there's a camera activity to handle the intent
-                    takePictureIntent.resolveActivity(packageManager)?.also {
-                        // Create the File where the photo should go
-                        val photoFile: File? = try {
-                            createImageFile()
-                        } catch (ex: IOException) {
-                            null
-                        }
-                        // Continue only if the File was successfully created
-                        photoFile?.also {
-                            val photoURI: Uri = FileProvider.getUriForFile(
-                                this,
-                                "com.example.proyekandroid",
-                                it
-                            )
-                            takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
-                            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
-                        }
-                    }
-                }
+            if (checkPermissions(permissions)) {
+                launchCamera()
             } else {
-                handlePermissions(
-                    arrayOf(
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        Manifest.permission.CAMERA
-                    )
-                )
+                handlePermissions(permissions)
             }
         }
         btnPreview.setOnClickListener {
@@ -125,12 +97,50 @@ class InputKaryawanActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+
+        navbarPengurus.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.homenav -> {
+                    val intnot = Intent(this@InputKaryawanActivity, HomePengurusActivity::class.java)
+                    startActivity(intnot)
+                }
+            }
+            true
+        }
+    }
+
+    private fun launchCamera() {
+        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
+            // Ensure that there's a camera activity to handle the intent
+            takePictureIntent.resolveActivity(packageManager)?.also {
+                // Create the File where the photo should go
+                val photoFile: File? = try {
+                    createImageFile()
+                } catch (ex: IOException) {
+                    null
+                }
+                // Continue only if the File was successfully created
+                photoFile?.also {
+                    val photoURI: Uri = FileProvider.getUriForFile(
+                        this,
+                        "com.example.proyekandroid",
+                        it
+                    )
+                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
+                    try {
+                        startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
+                    } catch (e: ActivityNotFoundException) {
+                        Toast.makeText(this@InputKaryawanActivity, e.message.toString(), Toast.LENGTH_LONG).show()
+                    }
+                }
+            }
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            Glide.with(this)
+            Glide.with(this@InputKaryawanActivity)
                 .load(Uri.fromFile(File(currentPhotoPath)))
                 .circleCrop()
                 .into(ivPhoto)
@@ -179,6 +189,19 @@ class InputKaryawanActivity : AppCompatActivity() {
             if (permissions != null && permissions.isNotEmpty()) return false
         }
         return true
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == REQ_CODE) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                launchCamera()
+            }
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

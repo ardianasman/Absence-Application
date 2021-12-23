@@ -7,7 +7,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_home_pengurus.*
 
 class ListKaryawanActivity : AppCompatActivity() {
     val listItem: ArrayList<Karyawan> = ArrayList()
@@ -40,6 +42,21 @@ class ListKaryawanActivity : AppCompatActivity() {
         rv.layoutManager = LinearLayoutManager(this)
 
         readData(db)
+
+        val navbarPengurus = findViewById<BottomNavigationView>(R.id.navbarPengurus)
+        navbarPengurus.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.inputnav -> {
+                    val intnot = Intent(this@ListKaryawanActivity, InputKaryawanActivity::class.java)
+                    startActivity(intnot)
+                }
+                R.id.homenav -> {
+                    val intnot = Intent(this@ListKaryawanActivity, HomePengurusActivity::class.java)
+                    startActivity(intnot)
+                }
+            }
+            true
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

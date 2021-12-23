@@ -19,7 +19,6 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 import android.content.Intent
-import android.content.SharedPreferences
 import android.location.Geocoder
 import android.location.Location
 import android.provider.Settings
@@ -27,7 +26,6 @@ import androidx.appcompat.app.AlertDialog
 import android.location.LocationManager
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import com.google.firebase.firestore.FirebaseFirestore
 
 
 class ScanActivity : AppCompatActivity() {
@@ -37,10 +35,6 @@ class ScanActivity : AppCompatActivity() {
     private val GPS_REQ_CODE = 1011
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var myLocation:String
-
-//    private lateinit var sharedPreference: SharedPreferences
-//    private lateinit var editor: SharedPreferences.Editor
-//    private val IS_CHECK_IN = "ischeckin"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -93,7 +87,6 @@ class ScanActivity : AppCompatActivity() {
 
         codeScanner.decodeCallback = DecodeCallback {
             runOnUiThread {
-//                Toast.makeText(this, "Scan result: ${it.text}", Toast.LENGTH_LONG).show()
                 val manager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
                 if (!manager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
                     buildAlertMessageNoGps();
@@ -101,13 +94,6 @@ class ScanActivity : AppCompatActivity() {
                     val tgl: String = SimpleDateFormat("dd-MM-yyyy").format(Date())
                     val waktu: String = SimpleDateFormat("HH:mm:ss").format(Date())
                     if (tgl == it.text) {
-//                        var isCheckIn = true
-//                        if (sharedPreference.contains(IS_CHECK_IN)) {
-//                            isCheckIn = !sharedPreference.getBoolean(IS_CHECK_IN, true)
-//                        }
-//                        editor.putBoolean(IS_CHECK_IN, isCheckIn)
-//                        editor.commit()
-
                         val bundle = Bundle()
                         bundle.putString(KEY_TGL, tgl)
                         bundle.putString(KEY_WAKTU, waktu)
