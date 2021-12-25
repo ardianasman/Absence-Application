@@ -30,5 +30,13 @@ class HomePengurusActivity: AppCompatActivity() {
             val intent = Intent(this@HomePengurusActivity, QRCodeActivity::class.java)
             startActivity(intent)
         }
+        ivCuti.setOnClickListener {
+            val intent = Intent(this@HomePengurusActivity, AcceptCuti::class.java)
+            startActivity(intent)
+        }
+        ivIzin.setOnClickListener {
+            val intent = Intent(this@HomePengurusActivity, AcceptIzin::class.java)
+            startActivity(intent)
+        }
     }
 }

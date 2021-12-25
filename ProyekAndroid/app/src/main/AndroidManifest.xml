@@ -12,7 +12,8 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-    <uses-feature android:name="android.hardware.camera"
+    <uses-feature
+        android:name="android.hardware.camera"
         android:required="true" />
 
     <application
@@ -22,6 +23,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyekAndroid">
+        <activity
+            android:name=".AcceptIzin"
+            android:exported="true"
+            android:label="@string/title_activity_accept_izin"
+            android:theme="@style/Theme.ProyekAndroid.NoActionBar" />
+        <activity
+            android:name=".AcceptCuti"
+            android:exported="true" />
         <activity
             android:name=".SeeAbsensiKaryawan"
             android:exported="false" />

@@ -1,18 +1,13 @@
 package com.example.proyekandroid
 
 import android.app.DatePickerDialog
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputFilter
 import com.example.proyekandroid.MainActivity.Companion.data
-import com.google.common.reflect.TypeToken
-import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_add_cuti.*
 import java.text.SimpleDateFormat
-import java.time.Duration
-import java.time.temporal.ChronoUnit
 import java.util.*
 import java.util.concurrent.TimeUnit
 

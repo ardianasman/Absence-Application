@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/accepted.xml" value="0.13425925925925927" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/cardborder.xml" value="0.25416666666666665" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/cuti.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/denied.xml" value="0.13425925925925927" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/email.xml" value="0.3958333333333333" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/gaji.xml" value="0.25416666666666665" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/ic_back.xml" value="0.3958333333333333" />
@@ -13,9 +15,12 @@
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/laporan.xml" value="0.25416666666666665" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/scan.xml" value="0.25416666666666665" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/font/proximanova.xml" value="0.2777777777777778" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_accept_cuti.xml" value="0.22" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_accept_izin.xml" value="0.5" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_add_cuti.xml" value="0.5" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_cuti.xml" value="0.23802083333333332" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_home.xml" value="0.33" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_izin.xml" value="0.1361111111111111" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_notification.xml" value="0.18819655521783182" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_register.xml" value="0.25" />
@@ -23,7 +28,9 @@
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/fragment_input_kary.xml" value="0.38697916666666665" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/fragment_scan.xml" value="0.38697916666666665" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/item_karyawan.xml" value="0.38697916666666665" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/layoutacceptizincuti.xml" value="0.5" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/layoutizincuti.xml" value="0.23802083333333332" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/layoutnotification.xml" value="0.25" />
         <entry key="..\:/Users/Andre/AndroidStudioProjects/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Users/Andre/AndroidStudioProjects/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_input_karyawan.xml" value="0.1" />
         <entry key="..\:/Users/Andre/AndroidStudioProjects/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_laporan_absen.xml" value="0.15" />

@@ -32,7 +32,8 @@ class Cuti : AppCompatActivity() {
             .addOnSuccessListener {result ->
                 arCuti.clear()
                 for(docs in result){
-                    if(docs.data.get("username") == data){var data = ClassCuti(
+                    if(docs.data.get("username") == data){
+                        var data = ClassCuti(
                         docs.data.get("durasi").toString() + " Days",
                         docs.data.get("keterangan").toString(),
                         docs.data.get("start").toString(),
@@ -52,9 +53,5 @@ class Cuti : AppCompatActivity() {
         val adapterC = adapterutama(arCuti)
         rvCuti.layoutManager = LinearLayoutManager(this)
         rvCuti.adapter = adapterC
-    }
-
-    private fun CheckLeaveStatus(){
-
     }
 }
