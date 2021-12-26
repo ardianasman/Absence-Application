@@ -11,10 +11,12 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:layout_margin="8dp"
-        android:layout_weight="4"
+        android:layout_weight="5"
+        android:background="#0077B6"
         android:gravity="center"
         android:text="1"
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
         android:textSize="20sp" />
 
     <LinearLayout

@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-import android.widget.SpinnerAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
@@ -29,7 +28,6 @@ class LaporanAbsenActivity : AppCompatActivity() {
         val rvList:RecyclerView=findViewById(R.id.rvAbsen)
         rvList.adapter=adapterAbsen
         rvList.layoutManager=LinearLayoutManager(this)
-        val adapterBulan=ArrayAdapter(this@LaporanAbsenActivity,android.R.layout.simple_spinner_item,listBulan)
         db.collection("user").get().addOnCompleteListener {task->
             if (task.isSuccessful){
                 listKaryawan.clear()

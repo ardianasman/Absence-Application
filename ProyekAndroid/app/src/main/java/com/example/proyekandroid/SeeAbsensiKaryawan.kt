@@ -2,11 +2,9 @@ package com.example.proyekandroid
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Spinner
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_list_karyawan.*
 
 class SeeAbsensiKaryawan : AppCompatActivity() {
     private lateinit var db:FirebaseFirestore

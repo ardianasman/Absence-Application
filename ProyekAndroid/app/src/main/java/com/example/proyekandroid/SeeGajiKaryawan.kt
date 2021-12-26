@@ -19,7 +19,6 @@ class SeeGajiKaryawan : AppCompatActivity() {
         val tvDenda:TextView=findViewById(R.id.tvDenda)
         val tvTotal:TextView=findViewById(R.id.tvTotal)
         var user = null
-        // TODO: 12/20/2021 tambahan buat usernya 
         db.collection("gaji").whereEqualTo("username",user).get().addOnCompleteListener {
             task->
             if (task.isSuccessful){
