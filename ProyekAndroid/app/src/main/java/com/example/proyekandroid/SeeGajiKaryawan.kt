@@ -3,6 +3,8 @@ package com.example.proyekandroid
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.example.proyekandroid.MainActivity.Companion.KEY_USERNAME
+import com.example.proyekandroid.MainActivity.Companion.data
 import com.google.firebase.firestore.FirebaseFirestore
 
 class SeeGajiKaryawan : AppCompatActivity() {
@@ -19,7 +21,7 @@ class SeeGajiKaryawan : AppCompatActivity() {
         val tvDenda:TextView=findViewById(R.id.tvDenda)
         val tvTotal:TextView=findViewById(R.id.tvTotal)
         var user = null
-        db.collection("gaji").whereEqualTo("username",user).get().addOnCompleteListener {
+        db.collection("gaji").whereEqualTo("username", KEY_USERNAME).get().addOnCompleteListener {
             task->
             if (task.isSuccessful){
                 for (doc in task.result){

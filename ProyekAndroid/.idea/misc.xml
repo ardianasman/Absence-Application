@@ -31,7 +31,9 @@
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/layoutacceptizincuti.xml" value="0.5" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/layoutizincuti.xml" value="0.23802083333333332" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/layoutnotification.xml" value="0.25" />
+        <entry key="..\:/Users/Andre/AndroidStudioProjects/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_account.xml" value="0.1" />
         <entry key="..\:/Users/Andre/AndroidStudioProjects/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/Users/Andre/AndroidStudioProjects/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_home_pengurus.xml" value="0.22" />
         <entry key="..\:/Users/Andre/AndroidStudioProjects/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_input_karyawan.xml" value="0.1" />
         <entry key="..\:/Users/Andre/AndroidStudioProjects/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_laporan_absen.xml" value="0.15" />
         <entry key="..\:/Users/Andre/AndroidStudioProjects/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_list_karyawan.xml" value="0.1" />
@@ -41,6 +43,7 @@
         <entry key="..\:/Users/Andre/AndroidStudioProjects/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_set_gaji.xml" value="0.15" />
         <entry key="..\:/Users/Andre/AndroidStudioProjects/Proyek_Android/ProyekAndroid/app/src/main/res/layout/item_karyawan.xml" value="0.1" />
         <entry key="..\:/Users/Andre/AndroidStudioProjects/Proyek_Android/ProyekAndroid/app/src/main/res/layout/itemabsen.xml" value="0.22" />
+        <entry key="..\:/Users/Andre/AndroidStudioProjects/Proyek_Android/ProyekAndroid/app/src/main/res/menu/menu_pengurus.xml" value="0.1" />
         <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/account.xml" value="0.1125" />
         <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/cuti.xml" value="0.1125" />
         <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/ic_calendar.xml" value="0.1125" />

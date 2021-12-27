@@ -18,7 +18,7 @@ class SeeAbsensiKaryawan : AppCompatActivity() {
         adapter= AbsenAdapter(listAbsen)
         rvAbsen.layoutManager=LinearLayoutManager(this)
         rvAbsen.adapter=adapter
-        db.collection("absensi").whereEqualTo("username",""/*urus username*/).get()
+        db.collection("absensi").whereEqualTo("username", KEY_USERNAME).get()
             .addOnCompleteListener { task->
                 if (task.isSuccessful){
                     listAbsen.clear()
