@@ -17,6 +17,14 @@ class HomePengurusActivity: AppCompatActivity() {
                     val intnot = Intent(this@HomePengurusActivity, InputKaryawanActivity::class.java)
                     startActivity(intnot)
                 }
+                R.id.calendarnav -> {
+                    val intcal = Intent(this@HomePengurusActivity, CalendarActivity::class.java)
+                    startActivity(intcal)
+                }
+                R.id.accountnav -> {
+                    val intacc = Intent(this@HomePengurusActivity, AccountPengurusActivity::class.java)
+                    startActivity(intacc)
+                }
             }
             true
         }
