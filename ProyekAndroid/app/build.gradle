@@ -62,4 +62,5 @@ dependencies {
 
     //generate qr code
     implementation 'androidmads.library.qrgenearator:QRGenearator:1.0.3'
+
 }

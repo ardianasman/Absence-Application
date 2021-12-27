@@ -91,6 +91,8 @@
         <activity android:name=".LaporanAbsenActivity" />
         <activity android:name=".HomePengurusActivity" />
         <activity android:name=".QRCodeActivity" />
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".AccountPengurusActivity" />
     </application>
 
 </manifest>
