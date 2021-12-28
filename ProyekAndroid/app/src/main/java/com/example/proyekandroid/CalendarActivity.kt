@@ -4,6 +4,7 @@ import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -21,11 +22,15 @@ class CalendarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calendar)
+        supportActionBar?.setHomeButtonEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)
         val calendar = Calendar.getInstance()
         calendar.timeInMillis = System.currentTimeMillis()
         datePicker.init(
             calendar[Calendar.YEAR],
-            calendar[Calendar.MONTH], calendar[Calendar.DAY_OF_MONTH]
+            calendar[Calendar.MONTH],
+            calendar[Calendar.DAY_OF_MONTH]
         ) { datePicker, year, month, dayOfMonth ->
             val builder = AlertDialog.Builder(this)
             val dialogView = LayoutInflater.from(this@CalendarActivity).inflate(R.layout.dialog_input_pengumuman, null, false)
@@ -65,5 +70,11 @@ class CalendarActivity : AppCompatActivity() {
             alert.show()
 
         }
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> onBackPressed()
+        }
+        return true
     }
 }
