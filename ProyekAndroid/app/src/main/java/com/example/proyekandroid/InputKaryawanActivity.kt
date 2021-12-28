@@ -99,7 +99,7 @@ class InputKaryawanActivity : AppCompatActivity() {
             }
         }
 
-        navbaraccount.selectedItemId = R.id.inputnav
+        navbarPengurus.selectedItemId = R.id.inputnav
         navbarPengurus.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.homenav -> {
