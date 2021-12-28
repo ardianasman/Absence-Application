@@ -18,6 +18,7 @@ import android.widget.Toast
 import androidx.core.content.FileProvider
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_account.*
 import kotlinx.android.synthetic.main.activity_home_pengurus.*
 import java.io.File
 import java.io.IOException
@@ -98,11 +99,20 @@ class InputKaryawanActivity : AppCompatActivity() {
             }
         }
 
+        navbaraccount.selectedItemId = R.id.inputnav
         navbarPengurus.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.homenav -> {
                     val intnot = Intent(this@InputKaryawanActivity, HomePengurusActivity::class.java)
                     startActivity(intnot)
+                }
+                R.id.calendarnav -> {
+                    val intcal = Intent(this@InputKaryawanActivity, CalendarActivity::class.java)
+                    startActivity(intcal)
+                }
+                R.id.accountnav -> {
+                    val intacc = Intent(this@InputKaryawanActivity, AccountPengurusActivity::class.java)
+                    startActivity(intacc)
                 }
             }
             true

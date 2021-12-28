@@ -45,12 +45,15 @@
         <entry key="..\:/Users/Andre/AndroidStudioProjects/Proyek_Android/ProyekAndroid/app/src/main/res/layout/itemabsen.xml" value="0.22" />
         <entry key="..\:/Users/Andre/AndroidStudioProjects/Proyek_Android/ProyekAndroid/app/src/main/res/menu/menu_pengurus.xml" value="0.1" />
         <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/account.xml" value="0.1125" />
+        <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/circle_bg.xml" value="0.14166666666666666" />
         <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/cuti.xml" value="0.1125" />
         <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/ic_calendar.xml" value="0.1125" />
         <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/ic_input.xml" value="0.1125" />
         <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/ic_karyawan.xml" value="0.1125" />
         <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/ic_user.xml" value="0.2203125" />
+        <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_account.xml" value="0.1" />
         <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_add_cuti.xml" value="0.16" />
+        <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_calendar.xml" value="0.14375" />
         <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_cuti.xml" value="0.1" />
         <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_home.xml" value="0.22" />
         <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_home_pengurus.xml" value="0.5" />
@@ -62,6 +65,9 @@
         <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/layout/fragment_input_kary.xml" value="0.12771739130434784" />
         <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/layout/fragment_scan.xml" value="0.1213768115942029" />
         <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/layout/item_karyawan.xml" value="0.33" />
+        <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/layout/view_agenda_empty_event.xml" value="0.12552083333333333" />
+        <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/layout/view_agenda_event.xml" value="0.12552083333333333" />
+        <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/layout/view_agenda_header.xml" value="0.12552083333333333" />
         <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/menu/menu_list.xml" value="0.25" />
         <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/menu/menu_pengurus.xml" value="0.1" />
         <entry key="..\:/agung/Proyek_Android/ProyekAndroid/app/src/main/res/xml/file_paths.xml" value="0.1" />
