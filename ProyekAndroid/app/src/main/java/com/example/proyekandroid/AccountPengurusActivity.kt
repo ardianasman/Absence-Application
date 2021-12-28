@@ -16,6 +16,7 @@ class AccountPengurusActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_account_pengurus)
+        navBarAccPengurus.selectedItemId=R.id.accountnav
         navBarAccPengurus.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.homenav -> {
