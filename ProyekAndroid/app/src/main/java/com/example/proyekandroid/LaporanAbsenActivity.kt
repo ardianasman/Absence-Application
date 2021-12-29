@@ -16,29 +16,31 @@ class LaporanAbsenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_laporan_absen)
-        supportActionBar?.setHomeButtonEnabled(true)
-        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)
         db= FirebaseFirestore.getInstance()
         val listAbsen=ArrayList<Absensi>()
         val adapterAbsen=AbsenAdapter(listAbsen)
         val listKaryawan= ArrayList<String>()
-        val listBulan= arrayListOf("","Januari","Februari","Maret","April","Mei","Juni",
-        "Juli","Agustus","September","Oktober","November","Desember")
+        val listBulan= ArrayList<String>()
         val spKaryawan : Spinner=findViewById(R.id.spKaryawan)
         val spBulan :Spinner=findViewById(R.id.spBulan)
         val rvList:RecyclerView=findViewById(R.id.rvAbsen)
         rvList.adapter=adapterAbsen
         rvList.layoutManager=LinearLayoutManager(this)
-        val adapterBulan=ArrayAdapter(this@LaporanAbsenActivity,android.R.layout.simple_spinner_item,listBulan)
-        db.collection("user").get().addOnCompleteListener {task->
+        db.collection("absensi").get().addOnCompleteListener {task->
             if (task.isSuccessful){
                 listKaryawan.clear()
+                listBulan.clear()
                 for (doc in task.result){
-                    listKaryawan.add(doc.data["name"].toString())
+                    listKaryawan.add(doc.data["username"].toString())
+                    listBulan.add(doc.data["tanggal"].toString())
                 }
                 val adapterKaryawan=ArrayAdapter(this@LaporanAbsenActivity,android.R.layout.simple_spinner_item,listKaryawan)
                 adapterKaryawan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                 spKaryawan.adapter = adapterKaryawan
+                val adapterBulan=ArrayAdapter(this@LaporanAbsenActivity,android.R.layout.simple_spinner_item,listBulan)
+                adapterBulan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                spBulan.adapter=adapterBulan
+
             }
         }
         spKaryawan.onItemSelectedListener=object:AdapterView.OnItemSelectedListener{
@@ -48,8 +50,9 @@ class LaporanAbsenActivity : AppCompatActivity() {
                         if (task.isSuccessful){
                             listAbsen.clear()
                             for (doc in task.result){
-                                if(doc.data["tanggal"].toString().substring(3,4)==spBulan.selectedItemPosition.toString())
-                                listAbsen.add(doc.toObject(Absensi::class.java))
+                                if(doc.data["tanggal"].toString()==spBulan.selectedItem.toString()){
+                                    listAbsen.add(doc.toObject(Absensi::class.java))
+                                }
                             }
                         }
                     }

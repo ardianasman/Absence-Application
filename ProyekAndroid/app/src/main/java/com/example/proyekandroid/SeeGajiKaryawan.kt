@@ -19,8 +19,16 @@ class SeeGajiKaryawan : AppCompatActivity() {
         val tvBonus:TextView=findViewById(R.id.tvBonus)
         val tvDenda:TextView=findViewById(R.id.tvDenda)
         val tvTotal:TextView=findViewById(R.id.tvTotal)
-        var user = null
-        db.collection("gaji").whereEqualTo("username", KEY_USERNAME).get().addOnCompleteListener {            task->
+        var user=""
+        db.collection("user").whereEqualTo("email", KEY_USERNAME).get()
+            .addOnCompleteListener {task2->
+                if(task2.isSuccessful){
+                    for (doc2 in task2.result){
+                        user=doc2.data["name"].toString()
+                    }
+                }
+            }
+        db.collection("gaji").whereEqualTo("username", user).get().addOnCompleteListener {            task->
             if (task.isSuccessful){
                 for (doc in task.result){
                     var pokok=doc.data["gaji_pokok"].toString().toInt()

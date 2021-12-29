@@ -18,12 +18,19 @@ class SeeAbsensiKaryawan : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_see_absensi_karyawan)
         db= FirebaseFirestore.getInstance()
-        db.collection("absensi").whereEqualTo("username",KEY_USERNAME).get()
+        db.collection("user").whereEqualTo("email",KEY_USERNAME).get()
             .addOnCompleteListener { task->
                 if (task.isSuccessful){
                     listAbsen.clear()
                     for(doc in task.result){
-                        listAbsen.add(doc.toObject(Absensi::class.java))
+                        db.collection("absensi").whereEqualTo("username",doc.data["name"].toString()).get()
+                            .addOnCompleteListener {task2->
+                                if(task2.isSuccessful){
+                                    for (doc2 in task2.result){
+                                        listAbsen.add(doc2.toObject(Absensi::class.java))
+                                    }
+                                }
+                            }
                     }
                 }
                 adapter= AbsenAdapter(listAbsen)

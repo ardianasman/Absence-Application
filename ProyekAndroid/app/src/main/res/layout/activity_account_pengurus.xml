@@ -85,7 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
         android:text="Edit Profile"
-        app:layout_constraintEnd_toEndOf="@+id/tvTelpPengurus"
-        app:layout_constraintStart_toStartOf="@+id/tvTelpPengurus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTelpPengurus" />
 </androidx.constraintlayout.widget.ConstraintLayout>
