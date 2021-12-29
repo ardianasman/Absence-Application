@@ -38,7 +38,7 @@ class LaporanAbsenActivity : AppCompatActivity() {
                 }
                 val adapterKaryawan=ArrayAdapter(this@LaporanAbsenActivity,android.R.layout.simple_spinner_item,listKaryawan)
                 adapterKaryawan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spKaryawan.adapter =adapterKaryawan
+                spKaryawan.adapter = adapterKaryawan
             }
         }
         spKaryawan.onItemSelectedListener=object:AdapterView.OnItemSelectedListener{

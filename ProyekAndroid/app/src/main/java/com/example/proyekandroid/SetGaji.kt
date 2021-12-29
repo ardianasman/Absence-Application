@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
+import com.example.proyekandroid.MainActivity.Companion.KEY_USERNAME
 import com.google.firebase.firestore.FirebaseFirestore
 
 class SetGaji : AppCompatActivity() {
@@ -27,7 +28,7 @@ class SetGaji : AppCompatActivity() {
             if(task.isSuccessful){
                 listKaryawan.clear()
                 for(doc in task.result){
-                    listKaryawan.add(doc.data["nama"].toString())
+                    listKaryawan.add(doc.data["name"].toString())
                 }
                 val newAdapter=ArrayAdapter(this@SetGaji,android.R.layout.simple_spinner_item,listKaryawan)
                 newAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -40,7 +41,7 @@ class SetGaji : AppCompatActivity() {
             var bonus=etBonus.text.toString()
             var denda=etDenda.text.toString()
             var user=spUser.selectedItem.toString()
-            db.collection("gaji").whereEqualTo("username",user).get()
+            db.collection("gaji").whereEqualTo("username",KEY_USERNAME).get()
                 .addOnCompleteListener { task->
                     if (task.isSuccessful){
                         for(doc in task.result){
