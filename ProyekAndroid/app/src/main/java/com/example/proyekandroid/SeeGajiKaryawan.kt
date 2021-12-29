@@ -3,6 +3,7 @@ package com.example.proyekandroid
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.example.proyekandroid.MainActivity.Companion.KEY_USERNAME
 import com.google.firebase.firestore.FirebaseFirestore
 
 class SeeGajiKaryawan : AppCompatActivity() {
@@ -19,9 +20,7 @@ class SeeGajiKaryawan : AppCompatActivity() {
         val tvDenda:TextView=findViewById(R.id.tvDenda)
         val tvTotal:TextView=findViewById(R.id.tvTotal)
         var user = null
-        // TODO: 12/20/2021 tambahan buat usernya 
-        db.collection("gaji").whereEqualTo("username",user).get().addOnCompleteListener {
-            task->
+        db.collection("gaji").whereEqualTo("username", KEY_USERNAME).get().addOnCompleteListener {            task->
             if (task.isSuccessful){
                 for (doc in task.result){
                     var pokok=doc.data["gaji_pokok"].toString().toInt()

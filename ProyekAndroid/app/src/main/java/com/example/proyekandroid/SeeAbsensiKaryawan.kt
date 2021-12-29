@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Spinner
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.proyekandroid.MainActivity.Companion.KEY_USERNAME
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_list_karyawan.*
 
@@ -20,7 +21,7 @@ class SeeAbsensiKaryawan : AppCompatActivity() {
         adapter= AbsenAdapter(listAbsen)
         rvAbsen.layoutManager=LinearLayoutManager(this)
         rvAbsen.adapter=adapter
-        db.collection("absensi").whereEqualTo("username",""/*urus username*/).get()
+        db.collection("absensi").whereEqualTo("username",KEY_USERNAME).get()
             .addOnCompleteListener { task->
                 if (task.isSuccessful){
                     listAbsen.clear()
