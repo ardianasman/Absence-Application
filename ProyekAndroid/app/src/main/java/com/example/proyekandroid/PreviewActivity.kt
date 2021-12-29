@@ -58,6 +58,9 @@ class PreviewActivity : AppCompatActivity() {
             db.collection("user").document(username)
                 .set(k)
             Toast.makeText(this@PreviewActivity, "Data berhasil ditambahkan!", Toast.LENGTH_SHORT).show()
+
+            val intent = Intent(this@PreviewActivity, ListKaryawanActivity::class.java)
+            startActivity(intent)
         }
         btnList.setOnClickListener {
             val intent = Intent(this@PreviewActivity, ListKaryawanActivity::class.java)
