@@ -9,28 +9,39 @@
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/denied.xml" value="0.13425925925925927" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/email.xml" value="0.3958333333333333" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/gaji.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/holiday.xml" value="0.11805555555555555" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/ic_back.xml" value="0.3958333333333333" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3958333333333333" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/izin.xml" value="0.25416666666666665" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/laporan.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/logout.xml" value="0.17685185185185184" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/scan.xml" value="0.25416666666666665" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/font/proximanova.xml" value="0.2777777777777778" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_accept_cuti.xml" value="0.22" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_accept_izin.xml" value="0.5" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_account.xml" value="0.22" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_add_cuti.xml" value="0.5" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_calendar.xml" value="0.33" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_calendar_karyawan.xml" value="0.5" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_cuti.xml" value="0.23802083333333332" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_izin.xml" value="0.1361111111111111" />
-        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_main.xml" value="0.67" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_notification.xml" value="0.18819655521783182" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/dialog_edit_password.xml" value="0.11775362318840579" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/dialog_input_pengumuman.xml" value="0.11775362318840579" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/dropdownlist.xml" value="0.23802083333333332" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/fragment_input_kary.xml" value="0.38697916666666665" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/fragment_scan.xml" value="0.38697916666666665" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/item_karyawan.xml" value="0.38697916666666665" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/layoutacceptizincuti.xml" value="0.5" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/layoutevents.xml" value="0.25" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/layoutizincuti.xml" value="0.23802083333333332" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/layoutnotification.xml" value="0.25" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/layoutpengumuman.xml" value="0.25" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/menu/menu_list.xml" value="0.13425925925925927" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/menu/menu_pengurus.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_calendar.xml" value="0.2694746376811594" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/Proyek_Android/ProyekAndroid/app/src/main/res/layout/dialog_input_pengumuman.xml" value="0.2694746376811594" />
         <entry key="..\:/Users/Andre/AndroidStudioProjects/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_home.xml" value="0.1" />

@@ -13,6 +13,7 @@ import android.view.animation.AnimationUtils
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.core.view.isInvisible
 import com.google.firebase.firestore.FirebaseFirestore
 //import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
@@ -78,5 +79,6 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
         }
+        btntoRegister.isInvisible = true
     }
 }

@@ -67,6 +67,7 @@ class AcceptCuti : AppCompatActivity() {
                             .set(ClassNotification("Your leave application has been approved", docs.data.get("username").toString()))
                     }
                 }
+                getPengajuan()
             }
     }
     private fun Denie(datax: ClassCuti) {
@@ -82,6 +83,7 @@ class AcceptCuti : AppCompatActivity() {
                             .set(ClassNotification("Your leave application has been denied", docs.data.get("username").toString()))
                     }
                 }
+                getPengajuan()
             }
     }
 }
