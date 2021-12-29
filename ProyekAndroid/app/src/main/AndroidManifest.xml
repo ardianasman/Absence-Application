@@ -96,6 +96,7 @@
         <activity android:name=".QRCodeActivity" />
         <activity android:name=".CalendarActivity" />
         <activity android:name=".AccountPengurusActivity" />
+        <activity android:name=".SetGaji" />
     </application>
 
 </manifest>
