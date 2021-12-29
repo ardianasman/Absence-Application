@@ -60,7 +60,24 @@ class LaporanAbsenActivity : AppCompatActivity() {
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
             }
+        }
+        spBulan.onItemSelectedListener=object:AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                db.collection("absensi").whereEqualTo("username",spKaryawan.selectedItem.toString())
+                    .get().addOnCompleteListener {task->
+                        if (task.isSuccessful){
+                            listAbsen.clear()
+                            for (doc in task.result){
+                                if(doc.data["tanggal"].toString()==spBulan.selectedItem.toString()){
+                                    listAbsen.add(doc.toObject(Absensi::class.java))
+                                }
+                            }
+                        }
+                    }
+            }
 
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+            }
         }
     }
 }
