@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_main.*
+
+private var arPengumuman = arrayListOf<Pengumuman>()
 
 class Home : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +26,10 @@ class Home : AppCompatActivity() {
                 R.id.accountnav -> {
                     val intacc = Intent(this@Home, Account::class.java)
                     startActivity(intacc)
+                }
+                R.id.calnav -> {
+                    val intent = Intent(this@Home, CalendarKaryawan::class.java)
+                    startActivity(intent)
                 }
             }
             true
@@ -50,6 +57,30 @@ class Home : AppCompatActivity() {
             val intscan = Intent(this@Home, ScanActivity::class.java)
             startActivity(intscan)
         }
+
+        getPengumuman()
+    }
+
+    private fun getPengumuman() {
+        db.collection("pengumuman")
+            .get()
+            .addOnSuccessListener { result ->
+                arPengumuman.clear()
+                for (docs in result) {
+                    var data = Pengumuman(
+                        docs.data.get("judul").toString(),
+                        docs.data.get("tanggal").toString(),
+                        docs.data.get("text").toString()
+                    )
+                    arPengumuman.add(data)
+                }
+                Tampilkan()
+            }
+    }
+    private fun Tampilkan(){
+        val adapterP = adapterpengumuman(arPengumuman)
+        rvPengumuman.layoutManager = LinearLayoutManager(this)
+        rvPengumuman.adapter = adapterP
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

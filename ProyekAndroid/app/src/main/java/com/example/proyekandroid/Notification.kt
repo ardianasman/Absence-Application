@@ -29,7 +29,10 @@ class Notification : AppCompatActivity() {
                     val intacc = Intent(this@Notification, Account::class.java)
                     startActivity(intacc)
                 }
-
+                R.id.calnav -> {
+                    val intent = Intent(this@Notification, CalendarKaryawan::class.java)
+                    startActivity(intent)
+                }
             }
             true
         }
