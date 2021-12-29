@@ -12,45 +12,54 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
 
 class LaporanAbsenActivity : AppCompatActivity() {
-    private lateinit var db :FirebaseFirestore
+    private lateinit var db: FirebaseFirestore
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_laporan_absen)
-        db= FirebaseFirestore.getInstance()
-        val listAbsen=ArrayList<Absensi>()
-        val adapterAbsen=AbsenAdapter(listAbsen)
-        val listKaryawan= ArrayList<String>()
-        val listBulan= ArrayList<String>()
-        val spKaryawan : Spinner=findViewById(R.id.spKaryawan)
-        val spBulan :Spinner=findViewById(R.id.spBulan)
-        val rvList:RecyclerView=findViewById(R.id.rvAbsen)
-        rvList.adapter=adapterAbsen
-        rvList.layoutManager=LinearLayoutManager(this)
-        db.collection("absensi").get().addOnCompleteListener {task->
-            if (task.isSuccessful){
+        db = FirebaseFirestore.getInstance()
+        val listAbsen = arrayListOf<Absensi>()
+        val listKaryawan = arrayListOf<String>()
+        val listBulan = arrayListOf<String>()
+        val spKaryawan: Spinner = findViewById(R.id.spKaryawan)
+        val spBulan: Spinner = findViewById(R.id.spBulan)
+        val rvList: RecyclerView = findViewById(R.id.rvAbsen)
+        val adapterAbsen = AbsenAdapter(listAbsen)
+        rvList.layoutManager = LinearLayoutManager(this)
+        rvList.adapter = adapterAbsen
+        db.collection("absensi").get().addOnCompleteListener { task ->
+            if (task.isSuccessful) {
                 listKaryawan.clear()
                 listBulan.clear()
-                for (doc in task.result){
+                for (doc in task.result) {
                     listKaryawan.add(doc.data["username"].toString())
                     listBulan.add(doc.data["tanggal"].toString())
                 }
-                val adapterKaryawan=ArrayAdapter(this@LaporanAbsenActivity,android.R.layout.simple_spinner_item,listKaryawan)
+                val adapterKaryawan = ArrayAdapter(
+                    this@LaporanAbsenActivity,
+                    android.R.layout.simple_spinner_item,
+                    listKaryawan
+                )
                 adapterKaryawan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                 spKaryawan.adapter = adapterKaryawan
-                val adapterBulan=ArrayAdapter(this@LaporanAbsenActivity,android.R.layout.simple_spinner_item,listBulan)
+                val adapterBulan = ArrayAdapter(
+                    this@LaporanAbsenActivity,
+                    android.R.layout.simple_spinner_item,
+                    listBulan
+                )
                 adapterBulan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spBulan.adapter=adapterBulan
+                spBulan.adapter = adapterBulan
 
             }
         }
-        spKaryawan.onItemSelectedListener=object:AdapterView.OnItemSelectedListener{
+        spKaryawan.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                db.collection("absensi").whereEqualTo("username",spKaryawan.selectedItem.toString())
-                    .get().addOnCompleteListener {task->
-                        if (task.isSuccessful){
+                db.collection("absensi")
+                    .whereEqualTo("username", spKaryawan.selectedItem.toString())
+                    .get().addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
                             listAbsen.clear()
-                            for (doc in task.result){
-                                if(doc.data["tanggal"].toString()==spBulan.selectedItem.toString()){
+                            for (doc in task.result) {
+                                if (doc.data["tanggal"].toString() == spBulan.selectedItem.toString()) {
                                     listAbsen.add(doc.toObject(Absensi::class.java))
                                 }
                             }
@@ -61,14 +70,15 @@ class LaporanAbsenActivity : AppCompatActivity() {
             override fun onNothingSelected(p0: AdapterView<*>?) {
             }
         }
-        spBulan.onItemSelectedListener=object:AdapterView.OnItemSelectedListener{
+        spBulan.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                db.collection("absensi").whereEqualTo("username",spKaryawan.selectedItem.toString())
-                    .get().addOnCompleteListener {task->
-                        if (task.isSuccessful){
+                db.collection("absensi")
+                    .whereEqualTo("username", spKaryawan.selectedItem.toString())
+                    .get().addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
                             listAbsen.clear()
-                            for (doc in task.result){
-                                if(doc.data["tanggal"].toString()==spBulan.selectedItem.toString()){
+                            for (doc in task.result) {
+                                if (doc.data["tanggal"].toString() == spBulan.selectedItem.toString()) {
                                     listAbsen.add(doc.toObject(Absensi::class.java))
                                 }
                             }
