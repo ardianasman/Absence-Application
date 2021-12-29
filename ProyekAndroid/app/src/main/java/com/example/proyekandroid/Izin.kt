@@ -51,4 +51,10 @@ class Izin : AppCompatActivity() {
         rvIzin.layoutManager = LinearLayoutManager(this)
         rvIzin.adapter = adapterC
     }
+
+    override fun onBackPressed(){
+        val intent = Intent(this@Izin, Home::class.java)
+        startActivity(intent)
+        finish()
+    }
 }

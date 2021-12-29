@@ -94,6 +94,7 @@ class AddCuti : AppCompatActivity() {
                 .set(ClassCuti(TimeUnit.DAYS.convert(datediff.toLong(), TimeUnit.MILLISECONDS).toString(),etdeskripsi.text.toString(),tvStart.text.toString(),tvEnd.text.toString(),data,"0"))
             val intdone = Intent(this@AddCuti, Cuti::class.java)
             startActivity(intdone)
+            finish()
         }
     }
 }

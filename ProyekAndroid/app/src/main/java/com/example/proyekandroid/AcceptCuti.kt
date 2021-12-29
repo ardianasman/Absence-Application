@@ -59,7 +59,8 @@ class AcceptCuti : AppCompatActivity() {
             .get()
             .addOnSuccessListener { result ->
                 for (docs in result){
-                    if(docs.data.get("username") == datax.username.toString() && docs.data.get("end") == datax.end.toString()){
+                    if(docs.data.get("username") == datax.username.toString() && docs.data.get("end") == datax.end.toString() && docs.data.get("keterangan") == datax.keterangan
+                            .toString()){
 
                         db.collection("cuti").document(docs.id.toString())
                             .update("status", "1")
@@ -75,7 +76,8 @@ class AcceptCuti : AppCompatActivity() {
             .get()
             .addOnSuccessListener { result ->
                 for (docs in result){
-                    if(docs.data.get("username") == datax.username.toString() && docs.data.get("end") == datax.end.toString()){
+                    if(docs.data.get("username") == datax.username.toString() && docs.data.get("end") == datax.end.toString() && docs.data.get("keterangan") == datax.keterangan
+                            .toString()){
 
                         db.collection("cuti").document(docs.id.toString())
                             .update("status", "2")

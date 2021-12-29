@@ -30,8 +30,6 @@ class CalendarKaryawan : AppCompatActivity() {
         ) { datePicker, year, month, dayOfMonth ->
             getCalendar(dayOfMonth.toString() + "-" + (month + 1).toString() + "-" + year.toString())
         }
-
-
     }
 
     private fun getCalendar(datex : String){

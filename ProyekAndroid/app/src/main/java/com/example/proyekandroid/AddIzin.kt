@@ -96,6 +96,7 @@ class AddIzin : AppCompatActivity() {
                 ))
             val intdone = Intent(this@AddIzin, Izin::class.java)
             startActivity(intdone)
+            finish()
         }
     }
 }

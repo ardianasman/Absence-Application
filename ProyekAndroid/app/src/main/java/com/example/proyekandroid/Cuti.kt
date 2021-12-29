@@ -54,4 +54,10 @@ class Cuti : AppCompatActivity() {
         rvCuti.layoutManager = LinearLayoutManager(this)
         rvCuti.adapter = adapterC
     }
+
+    override fun onBackPressed(){
+        val intent = Intent(this@Cuti, Home::class.java)
+        startActivity(intent)
+        finish()
+    }
 }
