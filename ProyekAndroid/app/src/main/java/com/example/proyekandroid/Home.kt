@@ -50,11 +50,11 @@ class Home : AppCompatActivity() {
         }
 
         ivLaporan.setOnClickListener {
-            val intscan = Intent(this@Home, SeeAbsensiKaryawan::class.java)
+            val intscan = Intent(this@Home, LaporanAbsenKaryawanBackup::class.java)
             startActivity(intscan)
         }
         ivGaji.setOnClickListener {
-            val intscan = Intent(this@Home, SeeGajiKaryawan::class.java)
+            val intscan = Intent(this@Home, SeeGajiBackup::class.java)
             startActivity(intscan)
         }
 

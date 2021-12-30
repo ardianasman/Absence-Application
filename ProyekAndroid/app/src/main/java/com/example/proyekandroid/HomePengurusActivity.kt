@@ -34,7 +34,7 @@ class HomePengurusActivity: AppCompatActivity() {
             startActivity(intent)
         }
         ivGaji.setOnClickListener {
-            val intent = Intent(this@HomePengurusActivity, SetGaji::class.java)
+            val intent = Intent(this@HomePengurusActivity, SetGajiBackup::class.java)
             startActivity(intent)
         }
         ivLaporan.setOnClickListener {

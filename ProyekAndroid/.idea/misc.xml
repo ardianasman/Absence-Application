@@ -18,7 +18,7 @@
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/drawable/scan.xml" value="0.25416666666666665" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/font/proximanova.xml" value="0.2777777777777778" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_accept_cuti.xml" value="0.22" />
-        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_accept_izin.xml" value="0.5" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_accept_izin.xml" value="0.2" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_account.xml" value="0.22" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_add_cuti.xml" value="0.5" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_add_izin.xml" value="0.14651639344262296" />
@@ -28,12 +28,15 @@
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_izin.xml" value="0.1361111111111111" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_laporan_absen.xml" value="0.14651639344262296" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_laporan_absen_karyawan_backup.xml" value="0.12" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_main.xml" value="0.67" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_notification.xml" value="0.18819655521783182" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_see_absensi_karyawan.xml" value="0.14651639344262296" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_see_gaji_backup.xml" value="0.21" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_see_gaji_karyawan.xml" value="0.14651639344262296" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_set_gaji.xml" value="0.14651639344262296" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/activity_set_gaji_backup.xml" value="0.18" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/dialog_edit_password.xml" value="0.11775362318840579" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/dialog_input_pengumuman.xml" value="0.11775362318840579" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/dropdownlist.xml" value="0.23802083333333332" />
@@ -43,6 +46,7 @@
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/layoutacceptizincuti.xml" value="0.5" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/layoutevents.xml" value="0.25" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/layoutizincuti.xml" value="0.23802083333333332" />
+        <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/layoutlaporanabsen.xml" value="0.13" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/layoutnotification.xml" value="0.25" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/layout/layoutpengumuman.xml" value="0.25" />
         <entry key="..\:/Android_SMT_5/Proyek_Android/Proyek_Android/ProyekAndroid/app/src/main/res/menu/menu_list.xml" value="0.13425925925925927" />
